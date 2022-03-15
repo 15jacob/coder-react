@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+/* #region HEADER */
+
+header
+{
+    position:fixed;
+    z-index:50;
+    box-shadow:0px -5px 20px 10px var(--grey-3);
+}
+
+header li
+{
+    width:6rem;
+}
+
+header,
+header li,
+#u63_logo
+{
+    height:6rem;
+}
+
+#banner-container,
+#banner-container > img
+{
+    transition:all 500ms ease;
+    padding-left:0;
+}
+
+#banner-container:hover
+{
+    background-color:var(--grey-5);
+}
+
+#banner-container:hover > img
+{
+    padding-left:2rem;
+}
+
+/* #endregion HEADER */
+
+/* #region SIDENAV */
+
+#side-nav
+{
+    width:300px;
+    position:absolute;
+    z-index:20;
+    top:6rem;
+    transition:all 500ms ease;
+    background-color:var(--grey-5);
+}
+
+#side-nav,
+#side-nav.close
+{
+    right:-310px;
+}
+
+#side-nav.open
+{
+    right:0;
+}
+
+#side-nav li
+{
+    background-color:var(--grey-7);
+}
+
+#side-nav li:nth-of-type(2n)
+{
+    background-color:var(--grey-6);
+}
+
+#side-nav li:hover
+{
+    background-color:var(--grey-11);
+}
+
+/* #endregion SIDENAV */
+
+#main-container
+{
+    position:relative;
+    padding-top:6rem;
+    min-height:100vh;
+    background-color:var(--grey-12)!important;
+    background-image:url('../img/bg/pattern.svg');
+    background-size:4px;
+    background-position:center;
+}
+
+/* #region MISC */
+
+.width-100
+{
+    width:100px;
+}
+
+.b-white
+{
+    border-color:var(--white);
+}
+
+.notificador
+{
+    max-width: 12rem;
+}
+
+/* #endregion MISC */
