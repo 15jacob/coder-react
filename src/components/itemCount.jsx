@@ -13,39 +13,32 @@ function ItemCount({idProduct = null, stock = 0})
     if(!idProduct || isNaN(idProduct)) return false;
 
     return (
-        <>
-            <div className="row item-count b-dashed">
-                <div className="col-12">
-                    <img src="https://es.web.img2.acsta.net/pictures/16/02/24/13/23/536269.jpg" alt="" />
-                </div>
-
-                <div className="col-12">
-                    <span className='d-inline-block w-100 f-24'>La Zona Muerta</span>
-                    <span className="d-inline-block w-100 fw-600i">Stephen King</span>
-                </div>
-
-
-                <div className="col-3">
+        <div className="col-12">
+            <div className="row">
+                <div className="col-auto p-0">
                     <button className="btn btn-yellow btn-update-stock" data-id-counter={'#product-' + idProduct} data-action="substract">-</button>
                 </div>
 
-                <div className="col-6 d-flex align-items-center">
+                <div className="col p-0 d-flex align-items-center">
                     <span className="d-inline-block w-100 t-center f-22 fw-600" id={'product-' + idProduct} data-stock={stock} data-value={stock > 0 ? '1' : '0'}>{stock > 0 ? '1x' : 'Sin Stock'}</span>
                 </div>
 
-                <div className="col-3">
+                <div className="col-auto p-0">
                     <button className="btn btn-yellow btn-update-stock" data-id-counter={'#product-' + idProduct} data-action="add">+</button>
                 </div>
 
-                <div className="col-12">
+                <hr className="my-10" />
+
+                <div className="col-12 p-0">
                     <button className="btn btn-red btn-add-cart" data-id-counter={'#product-' + idProduct}>Agregar al Carrito</button>
                 </div>
             </div>
-        </>
+        </div>
     );
 
     function Update_Stock()
     {
+        console.log(this.dataset.idCounter);
         let counter = document.querySelector(this.dataset.idCounter);
         let value = parseInt(counter.dataset.value);
 

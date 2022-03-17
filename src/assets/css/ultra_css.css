@@ -431,11 +431,6 @@ body
 
 @media (min-width:1900px)
 {
-    .container
-    {
-        max-width:1900px;
-    }
-
     .col-xxl-1
     {
         width:8.33%;
