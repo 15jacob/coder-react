@@ -4,14 +4,14 @@ import './assets/css/custom.css';
 
 //Components
 import Header from './components/header.jsx';
-import ItemListContainer from './components/itemListContainer.jsx';
+import MainContainer from './components/mainContainer.jsx';
 
 function App()
 {
     return(
         <>
             <Header/>
-            <ItemListContainer message="No hemos encontrado resultados para ese termino, o no estamos seguros de que estás buscando, probá con otra cosa"/>
+            <MainContainer/>
         </>
     );
 }
