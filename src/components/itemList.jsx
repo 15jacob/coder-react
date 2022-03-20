@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Item from './item.jsx';
 
 function ItemList()
 {
-    const [productList, productListHandler] = useState([]);
+    const [productList, setProductList] = useState([]);
 
     async function mock()
     {
@@ -37,16 +37,24 @@ function ItemList()
         });
     }
 
-    useState(function()
+    useEffect(function()
     {
-        mock().then(function(response)
+        mock()
+        .then(function(response)
         {
-            productListHandler(response);
+            setProductList(response);
+        })
+        .catch(function(error)
+        {
+            console.log(error);
         });
-    }, []);
+    });
 
     return (
-        productList.map(product => <Item idProduct={product.idProduct} title={product.title} author={product.author} img={product.img} stock={product.stock}/> )
+        productList.map(function(product)
+        {
+            return <Item idProduct={product.idProduct} key={product.idProduct} title={product.title} author={product.author} img={product.img} stock={product.stock}/>
+        })
     );
 }
 

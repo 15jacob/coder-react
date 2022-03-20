@@ -1,13 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 
 function ItemCount({idProduct = null, stock = 0})
 {
-    useEffect(function()
-    {
-        //Asignamos el evento para actualizar las unidades seleccionadas
-        document.querySelectorAll('.btn-update-stock').forEach(input => input.addEventListener('click', Update_Stock));
-        document.querySelectorAll('.btn-add-cart').forEach(input => input.addEventListener('click', Add_Cart));
-    });
+    const [selected, setStock] = useState(1);
 
     //Es necesario que haya un id de producto valido
     if(!idProduct || isNaN(idProduct)) return false;
@@ -16,44 +11,32 @@ function ItemCount({idProduct = null, stock = 0})
         <div className="col-12">
             <div className="row">
                 <div className="col-auto p-0">
-                    <button className="btn btn-yellow btn-update-stock" data-id-counter={'#product-' + idProduct} data-action="substract">-</button>
+                    <button className="btn btn-yellow btn-update-stock" data-id-counter={'#counter-' + idProduct} onClick={() => { if(selected > 1) setStock(selected - 1) }}>-</button>
                 </div>
 
                 <div className="col p-0 d-flex align-items-center">
-                    <span className="d-inline-block w-100 t-center f-22 fw-600" id={'product-' + idProduct} data-stock={stock} data-value={stock > 0 ? '1' : '0'}>{stock > 0 ? '1x' : 'Sin Stock'}</span>
+                    <span className="d-inline-block w-100 t-center f-22 fw-600" id={'counter-' + idProduct} data-stock={stock}>{stock > 0 ? selected + 'x' : 'Sin Stock'}</span>
+                    <input id={'selected-' + idProduct} type="hidden" value={selected} />
                 </div>
 
                 <div className="col-auto p-0">
-                    <button className="btn btn-yellow btn-update-stock" data-id-counter={'#product-' + idProduct} data-action="add">+</button>
+                    <button className="btn btn-yellow btn-update-stock" data-id-counter={'#counter-' + idProduct} onClick={() => { if(selected < stock) setStock(selected + 1) }}>+</button>
                 </div>
 
                 <hr className="my-10" />
 
                 <div className="col-12 p-0">
-                    <button className="btn btn-red btn-add-cart" data-id-counter={'#product-' + idProduct}>Agregar al Carrito</button>
+                    <button className="btn btn-red btn-add-cart" data-id-counter={'#counter-' + idProduct} onClick={() => Add_Cart(idProduct)}>Agregar al Carrito</button>
                 </div>
             </div>
         </div>
     );
 
-    function Update_Stock()
+    function Add_Cart(idProduct)
     {
-        console.log(this.dataset.idCounter);
-        let counter = document.querySelector(this.dataset.idCounter);
-        let value = parseInt(counter.dataset.value);
+        let selected = document.querySelector('#selected-' + idProduct).value;
 
-        if(this.dataset.action === 'add' && parseInt(counter.dataset.stock) > parseInt(counter.dataset.value))
-            value++;
-        else if(this.dataset.action === 'substract' && 0 < parseInt(counter.dataset.value))
-            value--;
-
-        counter.dataset.value = value;
-        counter.innerText = value + 'x';
-    }
-
-    function Add_Cart()
-    {
-        alert(`Agregaste ${document.querySelector(this.dataset.idCounter).dataset.value} unidades al carrito`);
+        alert(`Agregaste ${selected} ${selected > 1 ? 'unidades' : 'unidad'} al carrito`);
     }
 }
 
