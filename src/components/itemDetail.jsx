@@ -1,15 +1,14 @@
-
-function ItemDetail({idProduct = false})
+function ItemDetail({product})
 {
     return (
-        <div className="row articulo-detail">
+        <div className="row articulo-detail" id={'articulo-' + product.idProduct} key={product.idProduct}>
             <div className="col-12 col-md-4 d-flex justify-content-center">
-                <img src="https://1.bp.blogspot.com/-dmtXwoyivMk/TwVn4mXe8SI/AAAAAAAAAaw/XRcZfc6V05c/s1600/zona_muerta_pirnc.jpg" alt="lalala" />
+                <img src={product.img} alt="lalala" />
             </div>
 
             <div className="col-12 col-md-8 mt-100">
-                <h2 className="f-30">LA ZONA MUERTA</h2>
-                <h3 className="f-24 fw-600i">Stephen King</h3>
+                <h2 className="f-30">{product.title}</h2>
+                <h3 className="f-24 fw-600i">{product.author}</h3>
 
                 <button className="btn-red my-10 f-20 fw-600i">Agregar Al Carrito</button>
 

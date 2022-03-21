@@ -45,7 +45,7 @@ header li,
 #side-nav
 {
     width:300px;
-    position:absolute;
+    position:fixed;
     z-index:20;
     top:6rem;
     transition:all 500ms ease;
