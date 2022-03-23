@@ -1,7 +1,7 @@
 import ItemListContainer from './itemListContainer.jsx';
 import ItemDetailContainer from './itemDetailContainer.jsx';
 
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 //La idea de este componente es de mantener el routing del contenido principal fuera de App.js
 function MainContainer()
@@ -10,7 +10,7 @@ function MainContainer()
         <div className="container-fluid h-100 justify-content-center" id="main-container">
             <Routes>
                 <Route path="/" element={<ItemListContainer message="No hemos encontrado resultados para ese termino, o no estamos seguros de que estás buscando, probá con otra cosa"/>}/>
-                <Route path="/detail" element={<ItemDetailContainer/>}/>
+                <Route path="/detail/:productId" element={<ItemDetailContainer/>}/>
             </Routes>
         </div>
     );

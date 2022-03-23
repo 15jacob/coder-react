@@ -1,6 +1,6 @@
 import ItemList from './itemList.jsx';
 
-import notificador_noresults from './../assets/img/u63/u63_noresults.svg';
+//import notificador_noresults from './../assets/img/u63/u63_noresults.svg';
 
 function ItemListContainer({message = false})
 {    
