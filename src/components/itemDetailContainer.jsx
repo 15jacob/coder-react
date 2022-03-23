@@ -12,6 +12,7 @@ function ItemDetailContainer()
     [
         {
             idProduct: '1',
+            idCategory: '1',
             title: 'La Zona Muerta',
             author: 'Stephen King',
             img: 'https://1.bp.blogspot.com/-dmtXwoyivMk/TwVn4mXe8SI/AAAAAAAAAaw/XRcZfc6V05c/s1600/zona_muerta_pirnc.jpg',
@@ -19,6 +20,7 @@ function ItemDetailContainer()
         },
         {
             idProduct: '2',
+            idCategory: '2',
             title: '¿Sueñan los Androides con Ovejas Electricas?',
             author: 'Philip K. Dick',
             img: 'https://pictures.abebooks.com/inventory/30056249805.jpg',
@@ -26,6 +28,7 @@ function ItemDetailContainer()
         },
         {
             idProduct: '3',
+            idCategory: '1',
             title: 'Los Límites de La Fundación',
             author: 'Isaac Asimov',
             img: 'https://imagessl9.casadellibro.com/a/l/t7/49/9788497594349.jpg',
