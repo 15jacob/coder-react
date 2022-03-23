@@ -55,13 +55,9 @@ function ItemDetailContainer()
 
     useEffect(function()
     {
-        let isSubscribed = true;
-
         mock()
         .then(response => setproductDetails(response))
         .catch(error => console.log(error));
-
-        return () => isSubscribed = false;
     });
 
     return (
