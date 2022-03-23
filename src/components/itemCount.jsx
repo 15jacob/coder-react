@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import React, { useState } from 'react';
 
 function ItemCount({idProduct = null, stock = 0})
@@ -27,9 +26,7 @@ function ItemCount({idProduct = null, stock = 0})
                 <hr className="my-10" />
 
                 <div className="col-12 p-0">
-                    <NavLink to={`/detail`}>
-                        <button className="btn btn-red btn-add-cart" data-id-counter={'#counter-' + idProduct} onClick={() => Add_Cart(idProduct)}>Agregar al Carrito</button>
-                    </NavLink>
+                    <button className="btn btn-red btn-add-cart" data-id-counter={'#counter-' + idProduct} onClick={() => Add_Cart(idProduct)}>Agregar al Carrito</button>
                 </div>
             </div>
         </div>

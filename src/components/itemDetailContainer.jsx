@@ -7,6 +7,7 @@ function ItemDetailContainer()
     const [productDetails, setproductDetails] = useState([]);
     const { productId } = useParams();
 
+    //Pendiente de pasar a un JSON que haga mock de una API para no repetirlo en dos componentes separados
     const PRODUCTOS =
     [
         {
@@ -54,15 +55,13 @@ function ItemDetailContainer()
 
     useEffect(function()
     {
+        let isSubscribed = true;
+
         mock()
-        .then(function(response)
-        {
-            setproductDetails(response);
-        })
-        .catch(function(error)
-        {
-            console.log(error);
-        });
+        .then(response => setproductDetails(response))
+        .catch(error => console.log(error));
+
+        return () => isSubscribed = false;
     });
 
     return (

@@ -5,6 +5,7 @@ function ItemList()
 {
     const [productList, setProductList] = useState([]);
 
+    //Pendiente de pasar a un JSON que haga mock de una API para no repetirlo en dos componentes separados
     const PRODUCTOS =
     [
         {
