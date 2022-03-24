@@ -50,30 +50,25 @@ function ItemList()
     {
         return new Promise(function(resolve, reject)
         {
-            setTimeout(function()
+            console.log(categoryId);
+            if(categoryId)
             {
-                if(categoryId)
+                setTimeout(function()
                 {
                     let fetchedProducts = Get_Products_By_Category(categoryId);
-                    fetchedProducts.length > 0 ? resolve(fetchedProducts) : resolve(PRODUCTOS);
-                }
-                else
-                    resolve(PRODUCTOS);
-            }, 2000);
+                    fetchedProducts.length > 0 ? resolve(fetchedProducts) : reject();
+                }, 2000);
+            }
+            else
+                resolve(PRODUCTOS);
         });
     }
 
-    useEffect(function()
+    useState(function()
     {
         mock()
-        .then(function(response)
-        {
-            setProductList(response);
-        })
-        .catch(function(error)
-        {
-            console.log(error);
-        });
+        .then(response => setProductList(response))
+        .catch(error => console.log(error));
     });
 
     return (
