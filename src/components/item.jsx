@@ -6,7 +6,7 @@ function Item({idProduct = null, title = null, author = null, img = null, stock 
     return (
         <div className="col-6 col-md-3 col-lg-2 item-count">
             <div className="row b-dashed">
-                <Link to={`/detail/${idProduct}`}>
+                <Link className="t-decoration-none" to={`/detail/${idProduct}`}>
                     <div className="col-12">
                         <img src={img} alt={title} />
 

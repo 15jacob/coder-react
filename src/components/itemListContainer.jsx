@@ -5,7 +5,7 @@ import ItemList from './itemList.jsx';
 function ItemListContainer({message = false})
 {    
     return (
-        <div className="container m-auto mt-50">
+        <div className="container-fluid m-auto mt-50 px-50">
         {
             //Por ahora esto no tiene uso
             //<div className="row justify-center my-50">

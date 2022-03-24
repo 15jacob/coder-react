@@ -11,7 +11,7 @@ function ItemCount({idProduct = null, stock = 0})
         <div className="col-12">
             <div className="row">
                 <div className="col-auto p-0">
-                    <button className="btn btn-yellow btn-update-stock" data-id-counter={'#counter-' + idProduct} onClick={() => { if(selected > 1) setStock(selected - 1) }}>-</button>
+                    <button className="btn btn-red btn-update-stock" data-id-counter={'#counter-' + idProduct} onClick={() => { if(selected > 1) setStock(selected - 1) }}>-</button>
                 </div>
 
                 <div className="col p-0 d-flex align-items-center">
@@ -20,13 +20,13 @@ function ItemCount({idProduct = null, stock = 0})
                 </div>
 
                 <div className="col-auto p-0">
-                    <button className="btn btn-yellow btn-update-stock" data-id-counter={'#counter-' + idProduct} onClick={() => { if(selected < stock) setStock(selected + 1) }}>+</button>
+                    <button className="btn btn-red btn-update-stock" data-id-counter={'#counter-' + idProduct} onClick={() => { if(selected < stock) setStock(selected + 1) }}>+</button>
                 </div>
 
                 <hr className="my-10" />
 
                 <div className="col-12 p-0">
-                    <button className="btn btn-red btn-add-cart" data-id-counter={'#counter-' + idProduct} onClick={() => Add_Cart(idProduct)}>Agregar al Carrito</button>
+                    <button className="btn btn-dark btn-add-cart" data-id-counter={'#counter-' + idProduct} onClick={() => Add_Cart(idProduct)}>Agregar al Carrito</button>
                 </div>
             </div>
         </div>
