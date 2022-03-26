@@ -7,7 +7,8 @@ const PRODUCTS =
         title: '1984',
         author: 'George Orwell',
         img: require('../../assets/img/articulos/1984_Penguin_Books.jpg'),
-        stock: 5
+        stock: 5,
+        price: 400
     },
     {
         idProduct: '2',
@@ -15,7 +16,8 @@ const PRODUCTS =
         title: '20000 Leguas de Viaje Submarino',
         author: 'Julio Verne',
         img: require('../../assets/img/articulos/20000_Leguas_De_Viaje_Submarino_Amable.jpg'),
-        stock: 3
+        stock: 3,
+        price: 300
     },
     {
         idProduct: '3',
@@ -23,7 +25,8 @@ const PRODUCTS =
         title: 'Doce y el Verdugo',
         author: 'Alfred Hitchcock',
         img: require('../../assets/img/articulos/Alfred_Hitchcock_Doce_Y_El_Verdugo.jpg'),
-        stock: 12
+        stock: 12,
+        price: 250
     },
     {
         idProduct: '4',
@@ -31,7 +34,8 @@ const PRODUCTS =
         title: 'Animal Farm',
         author: 'George Orwell',
         img: require('../../assets/img/articulos/Animal_Farm.jpg'),
-        stock: 2
+        stock: 0,
+        price: 600
     },
     {
         idProduct: '5',
@@ -39,7 +43,8 @@ const PRODUCTS =
         title: 'Batman vs Aliens',
         author: null,
         img: require('../../assets/img/articulos/Batman_Aliens_1_de_2.jpg'),
-        stock: 1
+        stock: 1,
+        price: 800
     },
     {
         idProduct: '6',
@@ -47,7 +52,8 @@ const PRODUCTS =
         title: 'Camino a Mandalay',
         author: 'John Masters',
         img: require('../../assets/img/articulos/Camino_A_Mandalay.jpg'),
-        stock: 4
+        stock: 4,
+        price: 825,
     },
     {
         idProduct: '7',
@@ -55,7 +61,8 @@ const PRODUCTS =
         title: 'Cine Fantastico y Bizarro Nº28',
         author: null,
         img: require('../../assets/img/articulos/Cine_Fantastico_Y_Bizarro_28.jpg'),
-        stock: 7
+        stock: 7,
+        price: 1000
     },
     {
         idProduct: '8',
@@ -63,7 +70,8 @@ const PRODUCTS =
         title: 'Superman Nº579',
         author: null,
         img: require('../../assets/img/articulos/Superman_Novaro_579.jpg'),
-        stock: 5
+        stock: 5,
+        price: 270
     },
     {
         idProduct: '9',
@@ -71,7 +79,8 @@ const PRODUCTS =
         title: 'Todo es Eventual',
         author: 'Stephen King',
         img: require('../../assets/img/articulos/Todo_Es_Eventual.jpg'),
-        stock: 2
+        stock: 2,
+        price: 280
     },
     {
         idProduct: '10',
@@ -79,7 +88,8 @@ const PRODUCTS =
         title: 'Ultraje',
         author: 'Henry Denker',
         img: require('../../assets/img/articulos/Ultraje.jpg'),
-        stock: 3
+        stock: 3,
+        price: 990
     }
 ];
 

@@ -25,7 +25,7 @@ function ItemList()
     return (
         productList.map(function(product)
         {
-            return <Item idProduct={product.idProduct} key={product.idProduct} title={product.title} author={product.author} img={product.img} stock={product.stock}/>
+            return <Item idProduct={product.idProduct} key={product.idProduct} title={product.title} author={product.author} img={product.img} stock={product.stock} price={product.price}/>
         })
     );
 }
