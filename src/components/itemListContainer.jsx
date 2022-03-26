@@ -3,7 +3,7 @@ import ItemList from './ItemList.jsx';
 //import notificador_noresults from './../assets/img/u63/u63_noresults.svg';
 
 function ItemListContainer({message = false})
-{    
+{   
     return (
         <div className="container-fluid m-auto mt-50 px-50">
         {

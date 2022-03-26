@@ -1,7 +1,7 @@
 import ItemListContainer from './ItemListContainer.jsx';
 import ItemDetailContainer from './ItemDetailContainer.jsx';
 
-import { Routes, Route } from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 
 //La idea de este componente es de mantener el routing del contenido principal fuera de App.js
 function MainContainer()

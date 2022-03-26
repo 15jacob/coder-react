@@ -4,7 +4,7 @@ import SideNavList from './SideNavList.jsx';
 
 //Assets
 import u63_logo from './../assets/img/u63/u63_logo.svg';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function Header()
 {

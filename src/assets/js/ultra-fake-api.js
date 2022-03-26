@@ -88,6 +88,14 @@ export function Get_Products()
     return PRODUCTS;
 }
 
+export function Get_Products_By_Id(id)
+{
+    for(let i = 0; i < PRODUCTS.length; i++)
+        if(PRODUCTS[i].idProduct === id) return PRODUCTS[i];
+
+    return null;
+}
+
 export function Get_Products_By_Category(id)
 {
     let fetched = [];

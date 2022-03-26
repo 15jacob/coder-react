@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import ItemCount from './ItemCount.jsx';
 
 function Item({idProduct = null, title = null, author = null, img = null, stock = 0})
-{ 
+{
     return (
         <div className="col-6 col-md-3 col-lg-2 item-count">
             <div className="row b-dashed">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 function ItemCount({idProduct = null, stock = 0})
 {
@@ -11,7 +11,7 @@ function ItemCount({idProduct = null, stock = 0})
         <div className="col-12">
             <div className="row">
                 <div className="col-auto p-0">
-                    <button className="btn btn-red btn-update-stock" data-id-counter={'#counter-' + idProduct} onClick={() => { if(selected > 1) setStock(selected - 1) }}>-</button>
+                    <button className="btn btn-red btn-update-stock" data-id-counter={'#counter-' + idProduct} onClick={() => {if(selected > 1) setStock(selected - 1)}}>-</button>
                 </div>
 
                 <div className="col p-0 d-flex align-items-center">
@@ -20,7 +20,7 @@ function ItemCount({idProduct = null, stock = 0})
                 </div>
 
                 <div className="col-auto p-0">
-                    <button className="btn btn-red btn-update-stock" data-id-counter={'#counter-' + idProduct} onClick={() => { if(selected < stock) setStock(selected + 1) }}>+</button>
+                    <button className="btn btn-red btn-update-stock" data-id-counter={'#counter-' + idProduct} onClick={() => {if(selected < stock) setStock(selected + 1)}}>+</button>
                 </div>
 
                 <hr className="my-10" />
@@ -37,7 +37,7 @@ function ItemCount({idProduct = null, stock = 0})
         let selected = document.querySelector('#selected-' + idProduct).value;
 
         alert(`Agregaste ${selected} ${selected > 1 ? 'unidades' : 'unidad'} al carrito`);
-    }
+   }
 }
 
 export default ItemCount;
