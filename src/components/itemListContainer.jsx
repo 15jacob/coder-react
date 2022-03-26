@@ -1,4 +1,4 @@
-import ItemList from './itemList.jsx';
+import ItemList from './ItemList.jsx';
 
 //import notificador_noresults from './../assets/img/u63/u63_noresults.svg';
 

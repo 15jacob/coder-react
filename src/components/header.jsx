@@ -1,6 +1,6 @@
 //Components
-import Nav from './navBar.jsx';
-import SideNavList from './sideNavList.jsx';
+import Nav from './NavBar.jsx';
+import SideNavList from './SideNavList.jsx';
 
 //Assets
 import u63_logo from './../assets/img/u63/u63_logo.svg';

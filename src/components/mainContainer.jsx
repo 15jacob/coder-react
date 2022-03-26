@@ -1,5 +1,5 @@
-import ItemListContainer from './itemListContainer.jsx';
-import ItemDetailContainer from './itemDetailContainer.jsx';
+import ItemListContainer from './ItemListContainer.jsx';
+import ItemDetailContainer from './ItemDetailContainer.jsx';
 
 import { Routes, Route } from 'react-router-dom';
 

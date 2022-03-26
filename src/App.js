@@ -1,10 +1,10 @@
 //Styles
-import './assets/css/ultra_css.css';
+import './assets/css/ultra-css.css';
 import './assets/css/custom.css';
 
 //Components
-import Header from './components/header.jsx';
-import MainContainer from './components/mainContainer.jsx';
+import Header from './components/Header.jsx';
+import MainContainer from './components/MainContainer.jsx';
 
 import { BrowserRouter } from 'react-router-dom';
 

@@ -1,5 +1,5 @@
-import CartWidget from './cartWidget.jsx';
-import SideNavToggler from './sideNavToggler.jsx';
+import CartWidget from './CartWidget.jsx';
+import SideNavToggler from './SideNavToggler.jsx';
 
 function Nav({className, type = 'header'})
 {
