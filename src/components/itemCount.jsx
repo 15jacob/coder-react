@@ -1,10 +1,17 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {Link} from 'react-router-dom';
+
+import {CONTEXT_CART} from '../App.js';
 
 function ItemCount({idProduct = null, stock = 0, price = 0,})
 {
     const [selected, setSelected] = useState(1);
     const [inCart, setInCart] = useState(false);
+
+    const {cart} = useContext(CONTEXT_CART);
+
+    //ALELUYAAA
+    console.log(cart);
 
     return (
         <div className="row">
