@@ -1478,25 +1478,25 @@ label, hr
     background:var(--grey-1);
 }
 
-.bg-grey3,
+.bg-grey-3,
 .btn-dark
 {
     background:var(--grey-3);
 }
 
-.bg-grey5
+.bg-grey-5
 .btn-dark:hover
 {
     background:var(--grey-5);
 }
 
-.bg-grey7,
+.bg-grey-7,
 .btn-grey
 {
     background:var(--grey-7);
 }
 
-.bg-grey9,
+.bg-grey-9,
 .btn-grey:hover,
 .table-container::-webkit-scrollbar-track
 {

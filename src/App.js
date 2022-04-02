@@ -14,9 +14,9 @@ function App()
 {
     return(
         <BrowserRouter>
-            <Header/>
-
             <CartContextProvider>
+                <Header/>
+            
                 <div className="container-fluid h-100 justify-content-center" id="main-container">
                     <Routes>
                         {/* Listado Index */}
