@@ -2,11 +2,14 @@
 import './assets/css/ultra-css.css';
 import './assets/css/custom.css';
 
+//Context
+import CartContextProvider from './components/CartContextProvider.jsx';
+
 //Components
 import Header from './components/Header.jsx';
 import ItemListContainer from './components/ItemListContainer.jsx';
 import ItemDetailContainer from './components/ItemDetailContainer.jsx';
-import CartContextProvider from './components/CartContextProvider.jsx';
+import Cart from './components/Cart.jsx';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -27,6 +30,9 @@ function App()
 
                         {/* Detalle Articulo */}
                         <Route path="/detail/:productId" element={<ItemDetailContainer/>}/>
+
+                        {/* Detalle Carrito */}
+                        <Route path="/cart" element={<Cart/>}/>
                     </Routes>
                 </div>
             </CartContextProvider>

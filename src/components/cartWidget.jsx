@@ -6,12 +6,11 @@ function CartWidget()
 {
     const [quantityBubble, setQuantityBubble] = useState('d-none');
     const {totalItems} = useCartContext();
-    
 
     useEffect(function()
     {
         setQuantityBubble(totalItems > 0 ? 'd-flex' : 'd-none');
-    }, [totalItems])
+    }, [totalItems]);
 
     return (
         <li className="d-inline-flex flex-wrap align-content-center btn-red c-pointer">

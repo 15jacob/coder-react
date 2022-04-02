@@ -5,7 +5,7 @@ function ItemDetail({product})
     return (
         <div className="row articulo-detail" id={'articulo-' + product.idProduct} key={product.idProduct}>
             <div className="col-12 col-md-4 d-flex justify-content-center">
-                <img src={product.img} alt="lalala" />
+                <img src={product.img} alt={product.title} />
             </div>
 
             <div className="col-12 col-md-8 mt-100">
