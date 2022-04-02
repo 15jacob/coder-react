@@ -5,7 +5,7 @@ function Item({idProduct = null, title = null, author = null, img = null, stock 
 {
     return (
         <div className="col-6 col-md-3 col-lg-2 item-count">
-            <div className="row b-dashed">
+            <div className="row b-dashed bg-grey-14 box-shadow-1">
                 <div className="col-12">
                     <Link className="t-decoration-none" to={`/detail/${idProduct}`}>
                         <img src={img} alt={title} />

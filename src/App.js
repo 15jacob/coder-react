@@ -6,21 +6,17 @@ import './assets/css/custom.css';
 import Header from './components/Header.jsx';
 import ItemListContainer from './components/ItemListContainer.jsx';
 import ItemDetailContainer from './components/ItemDetailContainer.jsx';
+import CartContextProvider from './components/CartContextProvider.jsx';
 
-import { createContext, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-export const CONTEXT_CART = createContext("lala");
 
 function App()
 {
-    const [cart, setCart] = useState([]);
-
     return(
         <BrowserRouter>
             <Header/>
 
-            <CONTEXT_CART.Provider value={{cart, setCart}}>
+            <CartContextProvider>
                 <div className="container-fluid h-100 justify-content-center" id="main-container">
                     <Routes>
                         {/* Listado Index */}
@@ -33,7 +29,7 @@ function App()
                         <Route path="/detail/:productId" element={<ItemDetailContainer/>}/>
                     </Routes>
                 </div>
-            </CONTEXT_CART.Provider>
+            </CartContextProvider>
         </BrowserRouter>
     );
 }
