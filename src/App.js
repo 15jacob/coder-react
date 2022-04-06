@@ -12,6 +12,7 @@ import ItemDetailContainer from './components/ItemDetailContainer.jsx';
 import Cart from './components/Cart.jsx';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { getFireStoreApp } from './firebase/config.js';
 
 function App()
 {
