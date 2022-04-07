@@ -21,12 +21,11 @@ function ItemDetailContainer()
         });
     }, [productId]);
 
-
     return (
         <div key={productDetails.idProduct}>
             <div className="container-fluid articulo-detail-bg-container">
-                <div className="container-fluid articulo-detail-bg" style={{backgroundImage: `url(${require(`../assets/img/articulos/${productDetails.img}`)})` }}>
-                </div>
+                {/* <div className="container-fluid articulo-detail-bg" style={{backgroundImage: `url('${require(`../assets/img/articulos/${productDetails.img}`)}')` }}>
+                </div> */}
             </div>
 
             <div className="container m-auto mt-50" key={productDetails.idProduct}>
