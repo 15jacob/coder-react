@@ -2,41 +2,37 @@ import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import ItemDetail from './ItemDetail.jsx';
 
-import {Get_Products_By_Id} from '../assets/js/ultra-fake-api.js';
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
 
 function ItemDetailContainer()
 {
-    const [productDetails, setproductDetails] = useState([]);
+    const [productDetails, setProductDetails] = useState({});
     const {productId} = useParams();
-
-    async function mock()
-    {
-        return new Promise((resolve, reject) => resolve([Get_Products_By_Id(productId)]));
-    }
 
     useEffect(function()
     {
-        mock()
-        .then(response => setproductDetails(response))
-        .catch(error => console.log(error));
-    });
+        const queryDoc = doc(getFirestore(), 'items', productId);
+
+        getDoc(queryDoc)
+        //.then(response => console.log(response.data()));
+        .then(function(producto)
+        {
+            setProductDetails({id: producto.id, ...producto.data()});
+        });
+    }, [productId]);
+
 
     return (
-        productDetails.map(function(product)
-        {
-            return (
-                <div key={product.idProduct}>
-                    <div className="container-fluid articulo-detail-bg-container">
-                        <div className="container-fluid articulo-detail-bg" style={{backgroundImage: `url(${product.img})` }}>
-                        </div>
-                    </div>
-
-                    <div className="container m-auto mt-50" key={product.idProduct}>
-                        <ItemDetail product={product}/>
-                    </div>
+        <div key={productDetails.idProduct}>
+            <div className="container-fluid articulo-detail-bg-container">
+                <div className="container-fluid articulo-detail-bg" style={{backgroundImage: `url(${require(`../assets/img/articulos/${productDetails.img}`)})` }}>
                 </div>
-            );
-        })
+            </div>
+
+            <div className="container m-auto mt-50" key={productDetails.idProduct}>
+                <ItemDetail product={productDetails}/>
+            </div>
+        </div>
     );
 }
 

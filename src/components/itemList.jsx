@@ -2,30 +2,33 @@ import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import Item from './Item.jsx';
 
-//Fake Api
-import {Get_Products, Get_Products_By_Category} from '../assets/js/ultra-fake-api.js';
+import { collection, getDocs, getFirestore } from 'firebase/firestore';
 
 function ItemList()
 {
     const [productList, setProductList] = useState([]);
     const {categoryId} = useParams();
 
-    async function mock()
-    {
-        return new Promise((resolve, reject) => resolve(categoryId ? Get_Products_By_Category(categoryId) : Get_Products()));
-    }
-
     useEffect(function()
     {
-        mock()
-        .then(response => setProductList(response))
-        .catch(error => console.log(error));
+        const queryCollection = collection(getFirestore(), 'items')
+        
+        getDocs(queryCollection)
+        .then(function(response)
+        {
+            setProductList(response.docs.map(function(producto)
+            {
+                return {id: producto.id, ...producto.data()}
+            }));
+        });
+
+        console.log(productList);
     }, [categoryId]);
 
     return (
         productList.map(function(product)
         {
-            return <Item idProduct={product.idProduct} key={product.idProduct} title={product.title} author={product.author} img={product.img} stock={product.stock} price={product.price}/>
+            return <Item idProduct={product.id} key={product.id} title={product.title} author={product.author} img={product.img} stock={product.stock} price={product.price}/>
         })
     );
 }
