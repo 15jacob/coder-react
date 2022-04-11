@@ -14,7 +14,6 @@ function ItemDetailContainer()
         const queryDoc = doc(getFirestore(), 'items', productId);
 
         getDoc(queryDoc)
-        //.then(response => console.log(response.data()));
         .then(function(producto)
         {
             setProductDetails({id: producto.id, ...producto.data()});
@@ -24,8 +23,8 @@ function ItemDetailContainer()
     return (
         <div key={productDetails.idProduct}>
             <div className="container-fluid articulo-detail-bg-container">
-                {/* <div className="container-fluid articulo-detail-bg" style={{backgroundImage: `url('${require(`../assets/img/articulos/${productDetails.img}`)}')` }}>
-                </div> */}
+                <div className="container-fluid articulo-detail-bg" style={{backgroundImage: `url('${productDetails.img}')` }}>
+                </div>
             </div>
 
             <div className="container m-auto mt-50" key={productDetails.idProduct}>

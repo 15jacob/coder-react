@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom';
 
 import {useCartContext} from './CartContextProvider.jsx';
 
-function ItemCount({idProduct = null, stock = 0, price = 0,})
+function ItemCount({idProduct = null, stock = 0, cartSelected = 1, price = 0, cartView = false})
 {
-    const [selected, setSelected] = useState(1);
+    const [selected, setSelected] = useState(cartSelected);
     const {addItem, removeItem, isInCart} = useCartContext();
 
     const addToCartHandler = function(add)
@@ -19,7 +19,7 @@ function ItemCount({idProduct = null, stock = 0, price = 0,})
     return (
         <div className="row">
             {
-                isInCart(idProduct) === false ?
+                isInCart(idProduct) === false || cartView === true ?
                     <>
                         <div className="col-auto p-0">
                             <button className={`${stock > 0 ? 'btn-red' : 'btn-dark disabled'} btn-update-stock`} data-id-counter={'#counter-' + idProduct} onClick={() => {if(selected > 1) setSelected(selected - 1)}}>-</button>
